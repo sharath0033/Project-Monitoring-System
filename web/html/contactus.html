@@ -6,14 +6,12 @@ and open the template in the editor.
 -->
 <html lang="en">
     <head>
-        <title>Contact Us</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <title>Contact Us</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <style>
             body {
             font: 400 15px Lato, sans-serif;
@@ -126,24 +124,24 @@ and open the template in the editor.
                 visibility: visible;			
             }
             @keyframes slidelogo{
-              0% {
-                opacity: 0;
-                -webkit-transform: translateX(10%);
-              } 
-              100% {
-                opacity: 1;
-                -webkit-transform: translateX(0%);
-              }	
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateX(10%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateX(0%);
+                }	
             }
             @-webkit-keyframes slidelogo {
-              0% {
-                opacity: 0;
-                -webkit-transform: translateX(10%);
-              } 
-              100% {
-                opacity: 1;
-                -webkit-transform: translateX(0%);
-              }
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateX(10%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateX(0%);
+                }
             }
   
             .slideanim {visibility:hidden;}
@@ -156,41 +154,41 @@ and open the template in the editor.
                 visibility: visible;			
             }
             @keyframes slide {
-              0% {
-                opacity: 0;
-                -webkit-transform: translateY(70%);
-              } 
-              100% {
-                opacity: 1;
-                -webkit-transform: translateY(0%);
-              }	
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateY(70%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateY(0%);
+                }	
             }
             @-webkit-keyframes slide {
-              0% {
-                opacity: 0;
-                -webkit-transform: translateY(70%);
-              } 
-              100% {
-                opacity: 1;
-                -webkit-transform: translateY(0%);
-              }
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateY(70%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateY(0%);
+                }
             }
             
             @media screen and (max-width: 768px) {
-              .col-sm-4 {
-                text-align: center;
-                margin: 25px 0;
-              }
-              .btn-lg {
-                  width: 100%;
-                  margin-bottom: 35px;
-              }
+                .col-sm-4 {
+                    text-align: center;
+                    margin: 25px 0;
+                }
+                .btn-lg {
+                    width: 100%;
+                    margin-bottom: 35px;
+                }
             }
             
             @media screen and (max-width: 480px) {
-              .logo {
-                  font-size: 150px;
-              }
+                .logo {
+                    font-size: 150px;
+                }
             }
         </style>
     </head>
@@ -358,6 +356,9 @@ and open the template in the editor.
             <p>Copyright © 2016 by Avanthi Inst of Engg & Tech. All Rights Reserved.</p>		
         </footer>
 
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
         <script>
         $(document).ready(function(){
             $("footer a[href='#myPage']").on('click', function(event) {
