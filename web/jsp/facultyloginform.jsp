@@ -8,13 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/common.css">
-        <title>Student Login Page</title>
+        <title>Faculty Login Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
         <style>
             body{
-                background-image: url("../images/bcgr.jpg");
+                background-image: url("../images/bcgf.jpg");
                 background-size: 100% 180%;
                 background-repeat: no-repeat;
             }
@@ -70,7 +70,6 @@
                     opacity: 1;
                     -webkit-transform: translateY(0%);
                 }
-            }
         </style>
     </head>
     <body>
@@ -82,14 +81,14 @@
         <div class="container  slide">
             
             <div class="hed col-sm-4 col-sm-offset-4">
-                <h2>Student Login</h2>
+                <h2>Faculty Login</h2>
             </div>
             
             <div class="bck col-sm-4 col-sm-offset-4">
-            <form class="form-horizontal" method="post" id="stuloginform" action="../logic/studentregistration.jsp" role="form" novalidate="novalidate">
+            <form class="form-horizontal" method="post" id="facloginform" action="../logic/studentregistration.jsp" role="form" novalidate="novalidate">
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name="htno" maxlength="10" id="htno" placeholder="Enter HallTicket No">
+                        <input type="text" class="form-control" name="htno" maxlength="10" id="htno" placeholder="Enter Username">
                     </div>
                 </div>
                
@@ -105,11 +104,6 @@
                     </div>
                 </div>
                 
-                <div class="form-group">      
-                    <div class="col-sm-12" style="color:black">
-                        Not yet Registered?&nbsp; <a href="../jsp/studentregform.jsp">Register Here</a>
-                    </div>
-                </div>
             </form>
             </div>
           </div>

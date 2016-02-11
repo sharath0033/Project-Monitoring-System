@@ -9,32 +9,11 @@ and open the template in the editor.
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/common.css">
         <title>About Us</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
         <style>
-            body {
-                font: 400 15px/1.8 Lato, sans-serif;
-                color: #777;
-            }
-            
-            .header{
-                background-color: #f4511e;
-            }
-            
-            #heading{
-                font-size: 50px;
-            }
-            
-            .jumbotron {
-                background-color: #f6f6f6;
-                text-decoration: underline;
-                color: #000000;
-                text-align: center;
-                padding: 20px 0px 20px 0px;
-                font-family: Montserrat, sans-serif;
-            }
-            
             h3, h4 {
                 margin: 10px 0 30px 0;
                 letter-spacing: 10px;      
@@ -108,82 +87,10 @@ and open the template in the editor.
             textarea {
                 resize: none;
             }
-            
-            .footer{
-                background-color: #555;
-                color: #fff;
-                bottom: 0;
-                position: relative;
-                text-align: center;
-                padding: 5px;
-            }
-
-            footer .glyphicon {
-                font-size: 20px;
-                color: #f4511e;
-            }
-  
-            .slidelogo {
-                animation-name: slidelogo;
-                -webkit-animation-name: slidelogo;	
-                animation-duration: 1s;	
-                -webkit-animation-duration: 1s;
-                visibility: visible;			
-            }
-            @keyframes slidelogo{
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateX(10%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateX(0%);
-                }	
-            }
-            @-webkit-keyframes slidelogo {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateX(10%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateX(0%);
-                }
-            }
-            
-            .slideanim {visibility:hidden;}
-            
-            .slide {
-                animation-name: slide;
-                -webkit-animation-name: slide;	
-                animation-duration: 1s;	
-                -webkit-animation-duration: 1s;
-                visibility: visible;			
-            }
-            @keyframes slide {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateY(70%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateY(0%);
-                }	
-            }
-            @-webkit-keyframes slide {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateY(70%);
-                } 
-                100% {
-                    opacity: 1;
-                    -webkit-transform: translateY(0%);
-                }
-            }
         </style>
     </head>
     
-    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <body id="myPage">
         <div class="header">
             <a href="../index.html"><img class="slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80"></a>
         </div>
@@ -371,37 +278,9 @@ and open the template in the editor.
             <p>Copyright © 2016 by Avanthi Inst of Engg & Tech. All Rights Reserved.</p>		
         </footer>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-        <script>
-        $(document).ready(function(){
-            $("footer a[href='#myPage']").on('click', function(event) {
-
-                event.preventDefault();
-
-                var hash = this.hash;
-            
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function(){
-                    
-                            window.location.hash = hash;
-                        });
-            });
-
-            $(window).scroll(function() {
-                $(".slideanim").each(function(){
-                    var pos = $(this).offset().top;
-
-                    var winTop = $(window).scrollTop();
-                    if (pos < winTop + 600) {
-                        $(this).addClass("slide");
-                    }
-                });
-            });
-        });
-        </script>
+        <script src="../js/plugins/jquery.min.js"></script>
+        <script src="../js/plugins/bootstrap.min.js"></script>
+        <script src="../js/slidecode.js"></script>
 
     </body>
 </html>

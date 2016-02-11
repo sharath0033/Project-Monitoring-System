@@ -1,0 +1,95 @@
+body {
+                font: 400 15px/1.8 Lato, sans-serif;
+                color: #818181;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .header{
+                background-color: #f4511e;
+            }
+            
+            #heading{
+                font-size: 50px;
+            }
+            
+            .jumbotron {
+                background-color: #f6f6f6;
+                text-decoration: underline;
+                color: #000000;
+                text-align: center;
+                padding: 10px 0px 10px 0px;
+                margin: 0px;
+                font-family: Montserrat, sans-serif;
+            }
+            .footer{
+                background-color: #555;
+                color: #fff;
+                bottom: 0;
+                position: relative;
+                text-align: center;
+                padding: 5px;
+            }
+
+            footer .glyphicon {
+                font-size: 20px;
+                color: #f4511e;
+            }
+  
+            .slidelogo {
+                animation-name: slidelogo;
+                -webkit-animation-name: slidelogo;	
+                animation-duration: 1s;	
+                -webkit-animation-duration: 1s;
+                visibility: visible;			
+            }
+            @keyframes slidelogo{
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateX(10%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateX(0%);
+                }	
+            }
+            @-webkit-keyframes slidelogo {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateX(10%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateX(0%);
+                }
+            }
+            
+            .slideanim {visibility:hidden;}
+            
+            .slide {
+                animation-name: slide;
+                -webkit-animation-name: slide;	
+                animation-duration: 1s;	
+                -webkit-animation-duration: 1s;
+                visibility: visible;			
+            }
+            @keyframes slide {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateY(70%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateY(0%);
+                }	
+            }
+            @-webkit-keyframes slide {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateY(70%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateY(0%);
+                }
+            }
