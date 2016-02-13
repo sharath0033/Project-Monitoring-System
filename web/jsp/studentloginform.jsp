@@ -1,4 +1,10 @@
-
+<%  response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
+    session=request.getSession(false);
+    session.invalidate();
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*"%>
 <!DOCTYPE html>
@@ -14,7 +20,7 @@
     
         <style>
             body{
-                background-image: url("../images/bcgr.jpg");
+                background-image: url("../images/bcgl.jpg");
                 background-size: 100% 180%;
                 background-repeat: no-repeat;
             }
@@ -86,7 +92,7 @@
             </div>
             
             <div class="bck col-sm-4 col-sm-offset-4">
-            <form class="form-horizontal" method="post" id="stuloginform" action="../logic/studentregistration.jsp" role="form" novalidate="novalidate">
+            <form class="form-horizontal" id="stuloginform" action="../logic/studentlogin.jsp" role="form" novalidate="novalidate">
                 <div class="form-group">
                     <div class="col-sm-12">
                         <input type="text" class="form-control" name="htno" maxlength="10" id="htno" placeholder="Enter HallTicket No">
@@ -98,7 +104,7 @@
                         <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
                     </div>
                 </div>
-
+                
                 <div class="form-group">      
                     <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary">Sign In</button>

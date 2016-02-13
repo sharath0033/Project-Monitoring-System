@@ -131,10 +131,13 @@ $(function(){
                         htno: {
                             required: true,
                             minlength: 10,
-                            remote:  '../php/login/htnoreglog.jsp' 
+                            remote:  '../php/login/htnolog.jsp' 
                         },
                         password: {
-                            required: true   
+                            required: true,
+                            remote:{
+                             url: '../php/login/passlog.jsp?htno=12Q61A05A5'
+                            }
                         }
                     },
                     messages: {
@@ -144,7 +147,8 @@ $(function(){
                             remote: $.validator.format("{0} is not Registered. Please <a href=../jsp/studentregform.jsp>Register<a/>.")
                         },
                         password: {
-                            required: "Please enter a Password"
+                            required: "Please enter a Password",
+                            remote: "Hallticket No and Password do not match"
                         }
                     }
                 });
