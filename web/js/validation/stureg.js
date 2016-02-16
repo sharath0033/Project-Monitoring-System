@@ -121,7 +121,7 @@ $(function(){
                             maxlength: "Password must be less than 13 characters"
                         },
                         rtpassword: {
-                            required: "Please confirm Password",
+                            required: "Please confirm Password"
                         }
                     }
                 });
@@ -136,7 +136,9 @@ $(function(){
                         password: {
                             required: true,
                             remote:{
-                             url: '../php/login/passlog.jsp?htno=12Q61A05A5'
+                                url: '../php/login/passlog.jsp',
+                                data: {'htno':function(){return $('#htno').val();}},
+                                async:false 
                             }
                         }
                     },
@@ -169,6 +171,73 @@ $(function(){
                         },
                         password: {
                             required: "Please enter a Password"
+                        }
+                    }
+                });
+                
+                $("#cform").validate({
+                    rules: {
+                        q1: {
+                            required: true
+                        },
+                        q2: {
+                            required: true   
+                        },
+                        q3: {
+                            required: true   
+                        },
+                        q4: {
+                            required: true   
+                        },
+                        q5: {
+                            required: true   
+                        },
+                        q6: {
+                            required: true   
+                        },
+                        q7: {
+                            required: true   
+                        },
+                        q8: {
+                            required: true   
+                        },
+                        q9: {
+                            required: true   
+                        },
+                        q10: {
+                            required: true   
+                        }
+                    },
+                    messages: {
+                        q1: {
+                            required: "Please select an option"
+                        },
+                        q2: {
+                            required: "Please select an option"   
+                        },
+                        q3: {
+                            required: "Please select an option"   
+                        },
+                        q4: {
+                            required: "Please select an option"   
+                        },
+                        q5: {
+                            required: "Please select an option"  
+                        },
+                        q6: {
+                            required: "Please select an option"
+                        },
+                        q7: {
+                            required: "Please select an option"   
+                        },
+                        q8: {
+                            required: "Please select an option"   
+                        },
+                        q9: {
+                            required: "Please select an option"   
+                        },
+                        q10: {
+                            required: "Please select an option" 
                         }
                     }
                 });
