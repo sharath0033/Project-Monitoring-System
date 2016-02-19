@@ -1,34 +1,34 @@
 $(function(){
 
-                $.validator.setDefaults({
-                    errorClass: 'help-block',
-                    highlight: function(element) {
-                        $(element)
-                        .closest('.form-group')
-                        .addClass('has-error');
-                    },
-                    unhighlight: function(element) {
-                        $(element)
-                        .closest('.form-group')
-                        .removeClass('has-error');
-                    },
-                });
+    $.validator.setDefaults({
+        errorClass: 'help-block',
+            highlight: function(element) {
+                $(element)
+                    .closest('.form-group')
+                    .addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element)
+                    .closest('.form-group')
+                    .removeClass('has-error');
+            },
+    });
                 
-                $.validator.addMethod('daterange', function(value, element, arg) {
-                    if (this.optional(element) && !value) {
-                        return true;
-                    }
-                    var startDate = Date.parse(arg[0]),
-                        endDate = Date.parse(arg[1]),
-                        enteredDate = Date.parse(value);
-                    if (isNaN(enteredDate)) {
-                        return false;
-                    }
-                    return ( (isNaN(startDate) || (startDate <= enteredDate)) &&
-                             (isNaN(endDate) || (enteredDate <= endDate)));
-                    }, $.validator.format("Your age should be between 18-23"));
+    $.validator.addMethod('daterange', function(value, element, arg) {
+        if (this.optional(element) && !value) {
+            return true;
+        }
+        var startDate = Date.parse(arg[0]),
+            endDate = Date.parse(arg[1]),
+            enteredDate = Date.parse(value);
+        if (isNaN(enteredDate)) {
+            return false;
+        }
+        return ( (isNaN(startDate) || (startDate <= enteredDate)) &&
+            (isNaN(endDate) || (enteredDate <= endDate)));
+        }, $.validator.format("Your age should be between 18-23"));
   
-                $("#sturegform").validate({
+        $("#sturegform").validate({
                     rules: {
                         htno: {
                             required: true,
@@ -57,6 +57,7 @@ $(function(){
                         phone: {
                             required: true,
                             digits: true,
+                            minlength:10,
                             remote:  '../php/reg/phonereg.jsp'
                         },
                         address: {
@@ -105,6 +106,7 @@ $(function(){
                         phone: {
                             required: "Please enter your Mobile No",
                             digits: "Invalid Mobile No",
+                            minlength:"Invalid Mobile No",
                             remote: $.validator.format("{0} is already Registered. Please provide a unique Mobile No.")
                         },
                         address: {
@@ -123,6 +125,55 @@ $(function(){
                         rtpassword: {
                             required: "Please confirm Password"
                         }
+                    }
+                });
+                
+                $("#facregform").validate({
+                    rules: {
+                        htno: {
+                            required: true
+                        },
+                        fname: {
+                            required: true
+                        },
+                        lname: {
+                            required: true
+                        },
+                        special: {
+                            required: true
+                        },
+                        phone: {
+                            required: true,
+                            minlength:10,
+                            digits: true
+                        },
+                        emailid: {
+                            required: true,
+                            email: true
+                        }
+                    },
+                    messages: {
+                        htno: {
+                            required: "HallTicket No is mandatory"
+                        },
+                        fname: {
+                            required: "This field should not be empty"
+                        },
+                        lname: {
+                            required: "This field should not be empty"
+                        },
+                        special: {
+                            required: "Specialization is mandatory"
+                        },
+                        phone: {
+                            required: "Please enter your Mobile No",
+                            minlength:"Invalid Mobile No",
+                            digits: "Invalid Mobile No"
+                        },
+                        emailid: {
+                            required: "Please enter your Email ID",
+                            email: "Invalid Email ID"
+                        },
                     }
                 });
                 
@@ -171,6 +222,37 @@ $(function(){
                         },
                         password: {
                             required: "Please enter a Password"
+                        }
+                    }
+                });
+                
+                $("#proform").validate({
+                    rules: {
+                        ptitle: {
+                            required: true
+                        },
+                        fend: {
+                            required: true   
+                        },
+                        bend: {
+                            required: true
+                        },
+                        desc: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        ptitle: {
+                            required: "Please Enter Project Title"
+                        },
+                        fend: {
+                            required: "FrontEnd Field should not be empty"   
+                        },
+                        bend: {
+                            required: "BackEnd Field should not be empty"
+                        },
+                        desc: {
+                            required: "Please enter Project Description"
                         }
                     }
                 });

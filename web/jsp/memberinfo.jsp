@@ -7,10 +7,6 @@
     
     if(null != session.getAttribute("htno")){
         String htno = session.getAttribute("htno").toString();
-        try
-         {
-         Class.forName("com.mysql.jdbc.Driver");
-         Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*"%>
@@ -75,6 +71,16 @@
         </style>
     </head>
    
+    <%
+     try
+         {
+         Class.forName("com.mysql.jdbc.Driver");
+         Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
+         Statement st=cn.createStatement();
+         String mem=request.getParameter("mem");
+         ResultSet rs=st.executeQuery("SELECT * FROM register WHERE Registration_ID='"+mem+"'");
+         while(rs.next()){
+    %>
     <body>
 
         <div class="header">
@@ -84,41 +90,14 @@
         <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                    <%Statement st=cn.createStatement();
-                      ResultSet rs=st.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
-                      if(rs.next()){%>
-                            <li><a href="../jsp/guideinfo.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide</a></li>
-                    <%}
-                        rs.close();
-                        st.close();
-                      Statement st1=cn.createStatement();
-                      ResultSet rs1=st1.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Registration_ID='"+htno+"'");
-                      if(rs1.next()){%>
-                            <li><a href="../jsp/examresult.jsp"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
-                    <%}
-                        else{%> 
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-pencil"></span> Take Exam
-                                <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="../exampapers/c.jsp">C Paper</a></li>
-                                  <li><a href="#">Java Paper</a></li>
-                                  <li><a href="#">SQL Paper</a></li> 
-                                  <li><a href="#">HTML Paper</a></li>
-                                </ul>
-                            </li>
-                      <%}
-                          rs1.close();
-                          st1.close();
-                        Statement st2=cn.createStatement();
-                        ResultSet rs2=st2.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
-                        if(rs2.next()){%>
-                            <li><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
-                      <%}%>
+                    <li><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                    <li><a href="../jsp/guideinfo.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide</a></li>
+                    <li><a href="../jsp/takeexam.jsp"><span class="glyphicon glyphicon-pencil"></span> Take Exam</a></li>
+                    <li><a href="../jsp/examresult.jsp"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
+                    <li><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <li class="active"><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -127,56 +106,51 @@
          <div class="containerfluid  slide">
             
             <div class="hed">
-                <h2>Student Profile</h2>
+                <h2><%=mem%> Profile</h2>
             </div>
             
             <div class="bck col-sm-5 col-sm-offset-4">   
             <table class="table table-hover table-borderless">
                 <tbody>
-                    <%
-                        Statement st3=cn.createStatement();
-                    ResultSet rs3=st3.executeQuery("SELECT * FROM register WHERE Registration_ID='"+htno+"'");
-                    while(rs3.next()){
-                    %>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-education"></span> - Registered ID :</b></td>
-                        <td><%=rs3.getString(1)%></td>
+                        <td><%=rs.getString(1)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b>✎ - First Name :</b></td>
-                        <td><%=rs3.getString(2)%></td>
+                        <td><%=rs.getString(2)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b>✎ - Last Name :</b></td>
-                        <td><%=rs3.getString(3)%></td>
+                        <td><%=rs.getString(3)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b>🎂 - Date Of Birth :</b></td>
-                        <td><div><%=rs3.getString(4)%></div></td>
+                        <td><div><%=rs.getString(4)%></div></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Gender:</b></td>
-                        <td><%=rs3.getString(5)%></td>
+                        <td><%=rs.getString(5)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-tree-deciduous"></span> - Branch :</b></td>
-                        <td><%=rs3.getString(6)%></td>
+                        <td><%=rs.getString(6)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-calendar"></span> - Year :</b></td>
-                        <td><%=rs3.getString(7)%></td>
+                        <td><%=rs.getString(7)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-earphone"></span> - Phone No :</b></td>
-                        <td><%=rs3.getString(8)%></td>
+                        <td><%=rs.getString(8)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-home"></span> - Address :</b></td>
-                        <td><%=rs3.getString(9)%></td>
+                        <td><%=rs.getString(9)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-envelope"></span> - Email ID :</b></td>
-                        <td><%=rs3.getString(10)%></td>
+                        <td><%=rs.getString(10)%></td>
                     </tr> 
                 </tbody>
             </table>

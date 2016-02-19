@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/common.css">
-        <title>Faculty Login Page</title>
+        <title>Professor Login Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -81,14 +81,14 @@
         <div class="container  slide">
             
             <div class="hed col-sm-4 col-sm-offset-4">
-                <h2>Faculty Login</h2>
+                <h2>Professor Login</h2>
             </div>
             
             <div class="bck col-sm-4 col-sm-offset-4">
-            <form class="form-horizontal" method="post" id="facloginform" action="../logic/studentregistration.jsp" role="form" novalidate="novalidate">
+            <form class="form-horizontal" method="post" id="facloginform" action="../logic/facultylogin.jsp" role="form" novalidate="novalidate">
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name="htno" maxlength="10" id="htno" placeholder="Enter Username">
+                        <input type="text" class="form-control" name="username" maxlength="10" id="htno" placeholder="Enter Username">
                     </div>
                 </div>
                

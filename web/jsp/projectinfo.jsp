@@ -71,6 +71,16 @@
             .affix + .container-fluid {
                 padding-top: 70px;
             }
+            .modal-header{
+                background-color: #f4511e;
+            }
+            .modal-title{
+                font-weight:bold;
+                color: white;
+            }
+            .box{
+                padding:20px 20px 0px 20px;
+            }
         </style>
     </head>
    
@@ -118,38 +128,126 @@
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-queen"></span> - Team Leader :</b></td>
-                        <td><%=rs.getString(3)%></td>
+                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(3)%>"><%=rs.getString(3)%></a></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Member 2 :</b></td>
-                        <td><%=rs.getString(4)%></td>
+                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(4)%>"><%=rs.getString(4)%></a></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Member 3 :</b></td>
-                        <td><%=rs.getString(5)%></td>
+                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(5)%>"><%=rs.getString(5)%></a></td>
                     </tr>
                     <tr>
                     <%  Statement st1=cn.createStatement();
-                        ResultSet rs1=st1.executeQuery("SELECT Member_4 FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"' AND Project_Title!=''");
+                        ResultSet rs1=st1.executeQuery("SELECT Member_4 FROM projectregister WHERE (Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"') AND Member_4 IS NOT NULL");
                         if(rs1.next()){
                     %>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Member 4 :</b></td>
-                        <td><%=rs.getString(6)%></td>
+                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(6)%>"><%=rs.getString(6)%></a></td>
                     <%}%>    
+                    </tr>
+                    
+                    <%  
+                        Statement st2=cn.createStatement();
+                        ResultSet rs2=st2.executeQuery("SELECT * FROM projectregister WHERE (Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"') AND Project_Title IS NOT NULL");
+                        if(rs2.next()){
+                    %>
+  
+                    <tr>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-text-size"></span> - Project Title :</b></td></tr>
+                    <tr><td colspan="2" style="text-align:center"><%=rs.getString(7)%></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-blackboard"></span> - Front End :</b></td></tr>
+                    <tr><td colspan="2" style="text-align:center"><%=rs.getString(8)%></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-hdd"></span> - Back End :</b></td></tr>
+                    <tr><td colspan="2" style="text-align:center"><%=rs.getString(9)%></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-pencil"></span> - Description :</b></td></tr>
+                    <tr><td  colspan="2"><%=rs.getString(10)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
-                        <td><%=rs.getString(10)%></td>
-                    </tr> 
+                        <td><marquee><%=rs.getString(11)%></marquee></td>
+                    </tr>
+                    <%}
+                        else if(rs.getString(3).equals(htno)){%>
+                        <tr>
+                            <td colspan="2" style="text-align:center"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Project Information</button></td>
+                        </tr>
+                        <tr>
+                            <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
+                            <td><marquee><%=rs.getString(11)%></marquee></td>
+                        </tr>
+                        <%}
+                        else{%>
+                        <tr><td colspan="2" style="text-align:center">Project information is not submitted yet. Please contact your team Leader.</td></tr>
+                            <tr>
+                            <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
+                            <td><marquee><%=rs.getString(11)%></marquee></td>
+                            </tr>
+                    <%}%> 
                 </tbody>
             </table>
             </div>
+                    
          </div>
     </body>
     
     <footer class="footer">
             <p>Copyright © 2016 by Avanthi Inst of Engg & Tech. All Rights Reserved.</p>		
         </footer>
+    
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Project Information Form</h3>
+        </div>
+          
+        <div class="modal-body">
+            <div class="box"> 
+                <form class="form-horizontal" method="post" id="proform" action="../logic/projectsubmissionform.jsp" role="form" novalidate="novalidate">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" name="ptitle" id="ptitle" placeholder="Enter Project Title">
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <div class="col-sm-12">          
+                        <input type="text" class="form-control" name="fend" id="fend" placeholder="Project FrontEnd">
+                    </div>
+                </div>
+              
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" name="bend" id="bend" placeholder="Project BackEnd">
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <div class="col-sm-12">          
+                        <textarea type="password" class="form-control" name="desc" id="desc" placeholder="Enter Project brief overview" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+      </div>
+          <div class="form-group modal-footer">      
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                </div>
+                    </form>
+      </div>
+    </div>
+    </div>
         <script src="../js/plugins/jquery.min.js"></script>
         <script src="../js/plugins/jquery.validate.min.js"></script>
         <script src="../js/validation/stureg.js"></script>
