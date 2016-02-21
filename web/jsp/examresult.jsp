@@ -125,19 +125,19 @@
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-book"></span> - Subject :</b></td>
-                        <td><%=rs2.getString(3)%></td>
-                    </tr>
-                    <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-stats"></span> - Max Marks :</b></td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-list-alt"></span> - Total Marks :</b></td>
                         <td><%=rs2.getString(2)%></td>
                     </tr>
                     <tr>
+                        <td class="leftstuff"><b><span class="glyphicon glyphicon-stats"></span> - Max Marks :</b></td>
+                        <td><%=rs2.getString(3)%></td>
+                    </tr>
+                    <tr>
+                        <td class="leftstuff"><b><span class="glyphicon glyphicon-list-alt"></span> - Total Marks :</b></td>
+                        <td><%=rs2.getString(4)%></td>
+                    </tr>
+                    <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-star"></span> - Grade :</b></td>
-                        <td><%=rs2.getString(4)%> Grade</td>
+                        <td><%=rs2.getString(5)%> Grade</td>
                     </tr>
                 </tbody>
             </table>

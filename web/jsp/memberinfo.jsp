@@ -92,7 +92,6 @@
                 <ul class="nav navbar-nav">
                     <li><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
                     <li><a href="../jsp/guideinfo.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide</a></li>
-                    <li><a href="../jsp/takeexam.jsp"><span class="glyphicon glyphicon-pencil"></span> Take Exam</a></li>
                     <li><a href="../jsp/examresult.jsp"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
                     <li><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
                 </ul>
@@ -150,7 +149,7 @@
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-envelope"></span> - Email ID :</b></td>
-                        <td><%=rs.getString(10)%></td>
+                        <td><a href="mailto:<%=rs.getString(10)%>"><%=rs.getString(10)%></a></td>
                     </tr> 
                 </tbody>
             </table>

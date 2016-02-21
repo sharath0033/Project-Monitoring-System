@@ -44,7 +44,7 @@
             else{
                 grade="C";  
             }  
-            String qry= "INSERT INTO resultstudent VALUES('"+htno+"',"+cnt+",'C-Paper','"+grade+"')";
+            String qry= "INSERT INTO resultstudent VALUES('"+htno+"','C-Paper','10',"+cnt+",'"+grade+"')";
             if(st.executeUpdate(qry)>0){
                 response.sendRedirect("../jsp/examresult.jsp");
             }
