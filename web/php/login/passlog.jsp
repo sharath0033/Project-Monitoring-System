@@ -2,8 +2,6 @@
 <%@ page language="java" import="java.sql.*"%>
 <%@ page language="java" import="java.io.*"%>
  <%
-                
-              
         Class.forName("com.mysql.jdbc.Driver");
         Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
         String htno=request.getParameter("htno");
@@ -18,4 +16,4 @@
             {
                 out.print(false);
             }
-      %>
+%>

@@ -173,7 +173,44 @@ $(function(){
                         emailid: {
                             required: "Please enter your Email ID",
                             email: "Invalid Email ID"
+                        }
+                    }
+                });
+                
+                $("#teamallocform").validate({
+                    rules: {
+                        guide: {
+                            required: true
                         },
+                        tml: {
+                            required: true
+                        },
+                        mem2: {
+                            required: true
+                        },
+                        mem3: {
+                            required: true,
+                        },
+                        remark: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        guide: {
+                            required: "Please select Internal Guide"
+                        },
+                        tml: {
+                            required: "Please select Team Leader"
+                        },
+                        mem2: {
+                            required: "Please select Team Member"
+                        },
+                        mem3: {
+                            required: "Please select Team Member"
+                        },
+                        remark: {
+                            required: "Please enter Remarks"
+                        }
                     }
                 });
                 

@@ -241,7 +241,7 @@
       </div>
           <div class="form-group modal-footer">      
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
                     </form>

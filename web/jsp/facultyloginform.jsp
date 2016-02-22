@@ -1,4 +1,10 @@
-
+<%  response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setHeader("Pragma","no-cache");
+    response.setDateHeader ("Expires", 0);
+    session=request.getSession(false);
+    session.invalidate();
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*"%>
 <!DOCTYPE html>

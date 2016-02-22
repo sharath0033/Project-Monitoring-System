@@ -8,8 +8,8 @@
     if(null != session.getAttribute("uid")){
         String uid = session.getAttribute("uid").toString();
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*"%>
@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>Faculty Registration Page</title>
+        <title>Team Allocation Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -58,7 +58,7 @@
             @keyframes slide {
                 0% {
                     opacity: 0;
-                    -webkit-transform: translateY(0%);
+                    -webkit-transform: translateY(70%);
                 } 
                 100% {
                     opacity: 1;
@@ -68,7 +68,7 @@
             @-webkit-keyframes slide {
                 0% {
                     opacity: 0;
-                    -webkit-transform: translateY(0%);
+                    -webkit-transform: translateY(70%);
                 } 
                 100% {
                     opacity: 1;
@@ -96,8 +96,8 @@
         <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../jsp/catalogfaculty.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide Registration</a></li>
-                    <li><a href="../jsp/projectteamallocationform.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Team Allocation</a></li>
+                    <li><a href="../jsp/catalogfaculty.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide Registration</a></li>
+                    <li class="active"><a href="../jsp/projectteamallocationform.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Team Allocation</a></li>
                     <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-copy"></span> View Reports
                                 <span class="caret"></span></a>
@@ -119,51 +119,92 @@
                     
         <div class="container slide" >
             <div class="hed col-sm-4 col-sm-offset-4">
-                <h2>Internal Guide Registration</h2>
+                <h2>Project Team Allocation</h2>
             </div>
             
             
                 <div class="bck col-sm-4 col-sm-offset-4">
-                <form class="form-horizontal" method="post" id="facregform" action="../logic/facultyregistration.jsp" role="form" novalidate="novalidate">
+                <form class="form-horizontal" method="post" id="teamallocform" action="../logic/projectteamallocation.jsp" role="form" novalidate="novalidate">
                 <div class="form-group">
                     <div class="col-sm-12">
                         <%Statement st=cn.createStatement();
-                        ResultSet rs=st.executeQuery("SELECT COUNT(*) FROM guideregister");
+                        ResultSet rs=st.executeQuery("SELECT COUNT(*) FROM projectregister");
                         while(rs.next()){
                         int id=Integer.parseInt(rs.getString(1));
                         id++;%>
-                        <input type="text" style="font-weight:bold" class="form-control" name="gtno" maxlength="10" id="htno" value="CSE-<%=id%>" readonly>
+                        <input type="text" style="font-weight:bold" class="form-control" name="tmno" maxlength="10" id="htno" value="2016-<%=id%>" readonly>
                         <%}%>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name="fname" placeholder="First Name">
+                        <select name="guide" class="form-control">
+                                <option value="">Select Internal Guide</option>
+                                <%Statement st1=cn.createStatement();
+                                ResultSet rs1=st1.executeQuery("SELECT Guide_ID FROM guideregister");
+                                while(rs1.next()){%> 
+                                <option value="<%=rs1.getString(1)%>"><%=rs1.getString(1)%></option>
+                                <%}%>
+                        </select>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                        <select name="tml" class="form-control">
+                                <option value="">Select Team Leader</option>
+                                <%Statement st2=cn.createStatement();
+                                ResultSet rs2=st2.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='A'");
+                                while(rs2.next()){%> 
+                                <option value="<%=rs2.getString(1)%>"><%=rs2.getString(1)%></option>
+                                <%}%>
+                        </select>
                     </div>
                 </div>
-                    
+                
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name="special" placeholder="Specialization">
+                        <select name="mem2" class="form-control">
+                                <option value="">Select B group Member</option>
+                                <%Statement st3=cn.createStatement();
+                                ResultSet rs3=st3.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='B'");
+                                while(rs3.next()){%> 
+                                <option value="<%=rs3.getString(1)%>"><%=rs3.getString(1)%></option>
+                                <%}%>
+                        </select>
                     </div>
-                </div>
-              
+                </div>  
+                        
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" maxlength="10" class="form-control" name="phone" id="phone" placeholder="Enter Mobile No">
+                        <select name="mem3" class="form-control">
+                                <option value="">Select C group Member</option>
+                                <%Statement st4=cn.createStatement();
+                                ResultSet rs4=st4.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='C'");
+                                while(rs4.next()){%> 
+                                <option value="<%=rs4.getString(1)%>"><%=rs4.getString(1)%></option>
+                                <%}%>
+                        </select>
                     </div>
-                </div>
-               
+                </div>        
+                        
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="email" class="form-control" name="emailid" id="emailid" placeholder="Enter Email ID">
+                        <select name="mem4" class="form-control">
+                                <option value="">Select Optional Member</option>
+                                <%Statement st5=cn.createStatement();
+                                ResultSet rs5=st5.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='C'");
+                                while(rs5.next()){%> 
+                                <option value="<%=rs5.getString(1)%>"><%=rs5.getString(1)%></option>
+                                <%}%>
+                        </select>
+                    </div>
+                </div>        
+                        
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" name="remark" placeholder="Enter Remarks">
                     </div>
                 </div>
                 
