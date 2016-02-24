@@ -84,7 +84,7 @@
         <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                    <li><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
                     <%Statement st=cn.createStatement();
                       ResultSet rs=st.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
                       if(rs.next()){%>
@@ -116,9 +116,10 @@
                         if(rs2.next()){%>
                             <li><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
                       <%}%>
+                            <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <li class="active"><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -127,7 +128,7 @@
          <div class="containerfluid  slide">
             
             <div class="hed">
-                <h2>Student Profile</h2>
+                <h2 style="margin-bottom:10px"><a href="#" style="padding:0px 0px 0px 0px;" data-toggle="modal" data-target="#myModal"><img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="70" height="70"></a> User Profile</h2>
             </div>
             
             <div class="bck col-sm-5 col-sm-offset-4">   
@@ -186,7 +187,39 @@
     
     <footer class="footer">
             <p>Copyright © 2016 by Avanthi Inst of Engg & Tech. All Rights Reserved.</p>		
-        </footer>
+    </footer>
+    
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Update Profile Picture</h3>
+        </div>
+          
+        <div class="modal-body">
+            <div class="box"> 
+                <form class="form-horizontal" method="post" id="proform" action="../logic/projectsubmissionform.jsp" role="form" novalidate="novalidate">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="70" height="70">
+                        <label class="btn btn-primary" for="my-file-selector">
+                            <input id="my-file-selector" type="file">
+                            Select Image
+                        </label>
+                    </div>
+                </div>
+      </div>
+          <div class="form-group modal-footer">      
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
+      </div>
+    </div>
+    
         <script src="../js/plugins/jquery.min.js"></script>
         <script src="../js/plugins/jquery.validate.min.js"></script>
         <script src="../js/validation/stureg.js"></script>

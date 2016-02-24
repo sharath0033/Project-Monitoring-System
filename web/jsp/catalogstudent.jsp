@@ -56,6 +56,9 @@
                     -webkit-transform: translateY(0%);
                 }
             }
+            li.propic{
+                padding: 0px 0px 0px 0px;
+            }
             .affix {
                 top: 0;
                 width: 100%;
@@ -214,16 +217,18 @@
                                 </ul>
                             </li>
                       <%}
-                          rs1.close();
-                          st1.close();
+                        rs1.close();
+                        st1.close();
                         Statement st2=cn.createStatement();
                         ResultSet rs2=st2.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
                         if(rs2.next()){%>
                             <li><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
                       <%}%>
+                            <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <li class="propic"></li>
+                    <li class="propic"><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="55" height="55"> <%=htno%></a></li>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -245,6 +250,7 @@
         <footer class="footer">
             <p>Copyright © 2016 by Avanthi Inst of Engg & Tech. All Rights Reserved.</p>		
         </footer>
+                    
         <script src="../js/plugins/jquery.min.js"></script>
         <script src="../js/plugins/jquery.validate.min.js"></script>
         <script src="../js/validation/stureg.js"></script>

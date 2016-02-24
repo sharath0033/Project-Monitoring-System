@@ -26,7 +26,7 @@
     
         <style>
             body{
-                background-image: url("../images/bcgfr.jpg");
+                background-image: url("../images/bpta.jpg");
                 background-size: 100% 120%;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -102,10 +102,11 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-copy"></span> View Reports
                                 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                  <li style="padding:5px"><a href="../exampapers/c.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide Registration Report</a></li>
-                                  <li style="padding:5px"><a href="#"><span class="glyphicon glyphicon-education"></span> Student Registration Report</a></li>
-                                  <li style="padding:5px"><a href="#"><span class="glyphicon glyphicon-pencil"></span> Student Exam Report</a></li> 
-                                  <li style="padding:5px"><a href="#"><span class="glyphicon glyphicon-wrench"></span> Project Team Allocation Report</a></li>
+                                  <li style="padding:5px"><a href="../reports/internalguide.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide Registration Report</a></li>
+                                  <li style="padding:5px"><a href="../reports/studentreg.jsp"><span class="glyphicon glyphicon-education"></span> Student Registration Report</a></li>
+                                  <li style="padding:5px"><a href="../reports/studentresult.jsp"><span class="glyphicon glyphicon-pencil"></span> Student Exam Report</a></li> 
+                                  <li style="padding:5px"><a href="../reports/projectteam.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Team Allocation Report</a></li>
+                                  <li style="padding:5px"><a href="../reports/passedoutprojects.jsp"><span class="glyphicon glyphicon-calendar"></span> PassedOut Batch Project Report</a></li>
                                 </ul>
                             </li>
                 </ul>
@@ -132,7 +133,7 @@
                         while(rs.next()){
                         int id=Integer.parseInt(rs.getString(1));
                         id++;%>
-                        <input type="text" style="font-weight:bold" class="form-control" name="tmno" maxlength="10" id="htno" value="2016-<%=id%>" readonly>
+                        <input type="text" style="font-weight:bold" class="form-control" name="tmno" maxlength="10" id="htno" value="<%=id%>-2016" readonly>
                         <%}%>
                     </div>
                 </div>
@@ -140,12 +141,24 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <select name="guide" class="form-control">
-                                <option value="">Select Internal Guide</option>
+                            <option value="">Select Internal Guide</option>
                                 <%Statement st1=cn.createStatement();
                                 ResultSet rs1=st1.executeQuery("SELECT Guide_ID FROM guideregister");
-                                while(rs1.next()){%> 
-                                <option value="<%=rs1.getString(1)%>"><%=rs1.getString(1)%></option>
-                                <%}%>
+                                while(rs1.next()){
+                                    String temp=rs1.getString(1);
+                                    Statement st6=cn.createStatement();
+                                    ResultSet rs6=st6.executeQuery("SELECT COUNT(*) FROM projectregister WHERE Internal_Guide='"+temp+"'");
+                                    while(rs6.next()){
+                                       int count=Integer.parseInt(rs6.getString(1));
+                                       if(count<2){%>
+                                        <option value="<%=rs1.getString(1)%>"><%=rs1.getString(1)%></option>   
+                                       <%}
+                                    }
+                                    rs6.close();
+                                    st6.close();
+                                }
+                                rs1.close();
+                                st1.close();%>
                         </select>
                     </div>
                 </div>
@@ -153,12 +166,20 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <select name="tml" class="form-control">
-                                <option value="">Select Team Leader</option>
+                            <option value="">Select Team Leader</option>
                                 <%Statement st2=cn.createStatement();
                                 ResultSet rs2=st2.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='A'");
-                                while(rs2.next()){%> 
-                                <option value="<%=rs2.getString(1)%>"><%=rs2.getString(1)%></option>
-                                <%}%>
+                                while(rs2.next()){
+                                    String temp=rs2.getString(1);
+                                    Statement st7=cn.createStatement();
+                                    ResultSet rs7=st7.executeQuery("SELECT COUNT(*) FROM projectregister WHERE Team_Leader='"+temp+"'");
+                                    while(rs7.next()){
+                                       int count=Integer.parseInt(rs7.getString(1));
+                                       if(count<1){%> 
+                                        <option value="<%=rs2.getString(1)%>"><%=rs2.getString(1)%></option>
+                                      <%}
+                                    }
+                                }%>
                         </select>
                     </div>
                 </div>
@@ -166,12 +187,20 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <select name="mem2" class="form-control">
-                                <option value="">Select B group Member</option>
+                            <option value="">Select B group Member</option>
                                 <%Statement st3=cn.createStatement();
                                 ResultSet rs3=st3.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='B'");
-                                while(rs3.next()){%> 
-                                <option value="<%=rs3.getString(1)%>"><%=rs3.getString(1)%></option>
-                                <%}%>
+                                while(rs3.next()){
+                                    String temp=rs3.getString(1);
+                                    Statement st8=cn.createStatement();
+                                    ResultSet rs8=st8.executeQuery("SELECT COUNT(*) FROM projectregister WHERE Member_2='"+temp+"'");
+                                    while(rs8.next()){
+                                       int count=Integer.parseInt(rs8.getString(1));
+                                       if(count<1){%> 
+                                        <option value="<%=rs3.getString(1)%>"><%=rs3.getString(1)%></option>
+                                      <%}
+                                    }
+                                }%>
                         </select>
                     </div>
                 </div>  
@@ -179,12 +208,20 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <select name="mem3" class="form-control">
-                                <option value="">Select C group Member</option>
+                            <option value="">Select C group Member</option>
                                 <%Statement st4=cn.createStatement();
                                 ResultSet rs4=st4.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='C'");
-                                while(rs4.next()){%> 
-                                <option value="<%=rs4.getString(1)%>"><%=rs4.getString(1)%></option>
-                                <%}%>
+                                while(rs4.next()){
+                                    String temp=rs4.getString(1);
+                                    Statement st9=cn.createStatement();
+                                    ResultSet rs9=st9.executeQuery("SELECT COUNT(*) FROM projectregister WHERE Member_3='"+temp+"' OR Member_4='"+temp+"'");
+                                    while(rs9.next()){
+                                       int count=Integer.parseInt(rs9.getString(1));
+                                       if(count<1){%> 
+                                        <option value="<%=rs4.getString(1)%>"><%=rs4.getString(1)%></option>
+                                      <%}
+                                    }
+                                }%>
                         </select>
                     </div>
                 </div>        
@@ -192,12 +229,20 @@
                 <div class="form-group">
                     <div class="col-sm-12">
                         <select name="mem4" class="form-control">
-                                <option value="">Select Optional Member</option>
+                            <option value="">Select Optional Member</option>
                                 <%Statement st5=cn.createStatement();
                                 ResultSet rs5=st5.executeQuery("SELECT Registration_ID FROM resultstudent WHERE Grade='C'");
-                                while(rs5.next()){%> 
-                                <option value="<%=rs5.getString(1)%>"><%=rs5.getString(1)%></option>
-                                <%}%>
+                                while(rs5.next()){
+                                    String temp=rs5.getString(1);
+                                    Statement st10=cn.createStatement();
+                                    ResultSet rs10=st10.executeQuery("SELECT COUNT(*) FROM projectregister WHERE Member_3='"+temp+"' OR Member_4='"+temp+"'");
+                                    while(rs10.next()){
+                                       int count=Integer.parseInt(rs10.getString(1));
+                                       if(count<1){%> 
+                                        <option value="<%=rs5.getString(1)%>"><%=rs5.getString(1)%></option>
+                                      <%}
+                                    }
+                                }%>
                         </select>
                     </div>
                 </div>        

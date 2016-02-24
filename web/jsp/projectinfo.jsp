@@ -97,6 +97,7 @@
                     <li><a href="../jsp/guideinfo.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide</a></li>
                     <li><a href="../jsp/examresult.jsp"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
                     <li  class="active"><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
+                    <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
@@ -108,10 +109,10 @@
          <div class="container-fluid  slide">
             
             <div class="hed">
-                <h2>Student Profile</h2>
+                <h2>Project Team Information</h2>
             </div>
             
-            <div class="bck col-sm-4 col-sm-offset-4"> 
+             <div class="bck col-sm-6 col-lg-offset-3"> 
         <%  Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
             while(rs.next()){
@@ -119,32 +120,27 @@
             <table class="table table-hover table-borderless">
                 <tbody>
                     <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-eye-open"></span> - Team No :</b></td>
-                        <td><%=rs.getString(1)%></td>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-eye-open"></span> - Team No : &nbsp;&nbsp;</b> <%=rs.getString(1)%></td>
                     </tr>
                     <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-briefcase"></span> - Internal Guide :</b></td>
-                        <td><a href="../jsp/guideinfo.jsp"><%=rs.getString(2)%></a></td>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-briefcase"></span> - Internal Guide : &nbsp;&nbsp;</b> <a href="../jsp/guideinfo.jsp"><%=rs.getString(2)%></a></td>
                     </tr>
                     <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-queen"></span> - Team Leader :</b></td>
-                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(3)%>"><%=rs.getString(3)%></a></td>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-queen"></span> - Team Leader : &nbsp;&nbsp;</b> <a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(3)%>"><%=rs.getString(3)%></a></td>
                     </tr>
                     <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Member 2 :</b></td>
-                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(4)%>"><%=rs.getString(4)%></a></td>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-user"></span> - Member 2 : &nbsp;&nbsp;</b> <a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(4)%>"><%=rs.getString(4)%></a></td>                  
                     </tr>
                     <tr>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Member 3 :</b></td>
-                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(5)%>"><%=rs.getString(5)%></a></td>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-user"></span> - Member 3 : &nbsp;&nbsp;</b> <a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(5)%>"><%=rs.getString(5)%></a></td>
                     </tr>
                     <tr>
                     <%  Statement st1=cn.createStatement();
                         ResultSet rs1=st1.executeQuery("SELECT Member_4 FROM projectregister WHERE (Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"') AND Member_4 IS NOT NULL");
                         if(rs1.next()){
                     %>
-                        <td class="leftstuff"><b><span class="glyphicon glyphicon-user"></span> - Member 4 :</b></td>
-                        <td><a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(6)%>"><%=rs.getString(6)%></a></td>
+                        <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-user"></span> - Member 4 : &nbsp;&nbsp;</b> <a href="../jsp/memberinfo.jsp?mem=<%=rs.getString(6)%>"><%=rs.getString(6)%></a></td>
+                        <td></td>
                     <%}%>    
                     </tr>
                     
@@ -168,7 +164,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align:center"><b><span class="glyphicon glyphicon-pencil"></span> - Description :</b></td></tr>
-                    <tr><td  colspan="2"><%=rs.getString(10)%></td>
+                    <tr><td colspan="2" style="text-align:center"><%=rs.getString(10)%></td>
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
