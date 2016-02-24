@@ -14,6 +14,7 @@
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*"%>
+<%@ page language="java" import="java.io.*"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,6 +22,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
+        <link href="../css/jquery.filer.css" type="text/css" rel="stylesheet" />
+        <link href="../css/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
         <title>Student Profile Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -119,7 +122,10 @@
                             <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <%Statement st4=cn.createStatement();
+                        ResultSet rs4=st4.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs4.next()){;%>
+                        <li class="active"><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs4.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -128,7 +134,8 @@
          <div class="containerfluid  slide">
             
             <div class="hed">
-                <h2 style="margin-bottom:10px"><a href="#" style="padding:0px 0px 0px 0px;" data-toggle="modal" data-target="#myModal"><img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="70" height="70"></a> User Profile</h2>
+                <h2 style="margin-bottom:10px"><a href="#" style="padding:0px 0px 0px 0px;" data-toggle="modal" data-target="#myModal"><img src="../images/profiles/<%=rs4.getString(1)%>" class="img-circle" alt="Sharath" width="80" height="80"></a> User Profile</h2>
+                <%}%>
             </div>
             
             <div class="bck col-sm-5 col-sm-offset-4">   
@@ -200,30 +207,97 @@
           
         <div class="modal-body">
             <div class="box"> 
-                <form class="form-horizontal" method="post" id="proform" action="../logic/projectsubmissionform.jsp" role="form" novalidate="novalidate">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="70" height="70">
-                        <label class="btn btn-primary" for="my-file-selector">
-                            <input id="my-file-selector" type="file">
-                            Select Image
-                        </label>
-                    </div>
-                </div>
+                <form action="../logic/profilepic.jsp" id="picform" method="post" enctype="multipart/form-data">
+                    <input type="file" name="files" id="filer_input">
+            </div>
+        </div>
+          <div class="modal-footer">
+                <input type="submit" class="btn btn-info" value="Update Picture">
+                </form>
+          </div>
       </div>
-          <div class="form-group modal-footer">      
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary">Update</button>
-                    </div>
-                </div>
-            </form>
       </div>
     </div>
     
         <script src="../js/plugins/jquery.min.js"></script>
         <script src="../js/plugins/jquery.validate.min.js"></script>
         <script src="../js/validation/stureg.js"></script>
+        <script src="../js/plugins/jquery.filer.min.js"></script>
         <script src="../js/plugins/bootstrap.min.js"></script> 
+        <script>
+            $(document).ready(function() {
+                $('#filer_input').filer({
+                    limit: 1,
+                    maxSize: 5,
+                    extensions: ['jpg', 'jpeg', 'png'],
+                    changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Drag&Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
+    showThumbs: true,
+    theme: "dragdropbox",
+    templates: {
+        box: '<ul class="jFiler-items-list jFiler-items-grid"></ul>',
+        item: '<li class="jFiler-item">\
+                    <div class="jFiler-item-container">\
+                        <div class="jFiler-item-inner">\
+                            <div class="jFiler-item-thumb">\
+                                <div class="jFiler-item-status"></div>\
+                                <div class="jFiler-item-info">\
+                                    <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
+                                    <span class="jFiler-item-others">{{fi-size2}}</span>\
+                                </div>\
+                                {{fi-image}}\
+                            </div>\
+                            <div class="jFiler-item-assets jFiler-row">\
+                                <ul class="list-inline pull-left">\
+                                    <li>{{fi-progressBar}}</li>\
+                                </ul>\
+                                <ul class="list-inline pull-right">\
+                                    <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
+                                </ul>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </li>',
+        itemAppend: '<li class="jFiler-item">\
+                        <div class="jFiler-item-container">\
+                            <div class="jFiler-item-inner">\
+                                <div class="jFiler-item-thumb">\
+                                    <div class="jFiler-item-status"></div>\
+                                    <div class="jFiler-item-info">\
+                                        <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
+                                        <span class="jFiler-item-others">{{fi-size2}}</span>\
+                                    </div>\
+                                    {{fi-image}}\
+                                </div>\
+                                <div class="jFiler-item-assets jFiler-row">\
+                                    <ul class="list-inline pull-left">\
+                                        <li><span class="jFiler-item-others">{{fi-icon}}</span></li>\
+                                    </ul>\
+                                    <ul class="list-inline pull-right">\
+                                        <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
+                                    </ul>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </li>',
+        progressBar: '<div class="bar"></div>',
+        itemAppendToEnd: false,
+        removeConfirmation: true,
+        _selectors: {
+            list: '.jFiler-items-list',
+            item: '.jFiler-item',
+            progressBar: '.bar',
+            remove: '.jFiler-item-trash-action'
+        }
+    },
+    dragDrop: {
+        dragEnter: null,
+        dragLeave: null,
+        drop: null
+    }
+});
+             });    
+        </script>
+
     <%
         }  
     }

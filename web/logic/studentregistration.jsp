@@ -20,7 +20,7 @@ try
         Class.forName("com.mysql.jdbc.Driver");
         Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
         Statement st=cn.createStatement();
-                String qry="INSERT INTO project.register VALUES ('"+htno+"','"+fname+"','"+lname+"','"+dob+"','"+gender+"','"+branch+"','"+year+"','"+phone+"','"+address+"','"+emailid+"','"+password+"')";
+                String qry="INSERT INTO project.register VALUES ('"+htno+"','"+fname+"','"+lname+"','"+dob+"','"+gender+"','"+branch+"','"+year+"','"+phone+"','"+address+"','"+emailid+"','"+password+"','default.png')";
                 if(st.executeUpdate(qry)>0)
                     { 
                     session=request.getSession(false);

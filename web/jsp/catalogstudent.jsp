@@ -228,7 +228,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="propic"></li>
-                    <li class="propic"><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="55" height="55"> <%=htno%></a></li>
+                    <li class="propic"><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>

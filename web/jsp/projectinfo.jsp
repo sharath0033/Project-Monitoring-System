@@ -230,7 +230,7 @@
                
                 <div class="form-group">
                     <div class="col-sm-12">          
-                        <textarea type="password" class="form-control" name="desc" id="desc" placeholder="Enter Project brief overview" rows="4"></textarea>
+                        <textarea type="text" class="form-control" name="desc" id="desc" placeholder="Enter Project brief overview" rows="4"></textarea>
                     </div>
                 </div>
             </div>

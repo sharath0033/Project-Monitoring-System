@@ -294,6 +294,19 @@ $(function(){
                     }
                 });
                 
+                $("#picform").validate({
+                    rules: {
+                        files: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        files: {
+                            required: "Please Select a Picture to update"
+                        }
+                    }
+                });
+                
                 $("#cform").validate({
                     rules: {
                         q1: {
