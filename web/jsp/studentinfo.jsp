@@ -200,9 +200,9 @@
     <div class="modal-dialog">
     
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header"  style="padding:5px!important">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h3 class="modal-title">Update Profile Picture</h3>
+          <h2 class="modal-title" style="text-decoration:none"><b><img src="../images/profiles/<%=rs4.getString(1)%>" class="img-circle" alt="Sharath" width="120" height="120"> Update Profile Picture</b></h2>
         </div>
           
         <div class="modal-body">
@@ -229,13 +229,13 @@
                 $('#filer_input').filer({
                     limit: 1,
                     maxSize: 5,
-                    extensions: ['jpg', 'jpeg', 'png'],
+                    extensions: ['jpg', 'jpeg', 'png', 'gif'],
                     changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Drag&Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
     showThumbs: true,
     theme: "dragdropbox",
     templates: {
         box: '<ul class="jFiler-items-list jFiler-items-grid"></ul>',
-        item: '<li class="jFiler-item">\
+        item: '<li class="jFiler-item" style="margin-left:33%">\
                     <div class="jFiler-item-container">\
                         <div class="jFiler-item-inner">\
                             <div class="jFiler-item-thumb">\

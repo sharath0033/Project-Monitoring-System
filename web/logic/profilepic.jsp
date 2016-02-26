@@ -11,7 +11,8 @@
  <%
                 String htno=session.getAttribute("htno").toString();
                 Class.forName("com.mysql.jdbc.Driver");
-        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
+                Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","eminem");
+                String path="C:/Users/Emin3M/Documents/NetBeansProjects/Project Monitoring System/web/images/profiles/";
                 try
                 {
                 String files="";
@@ -53,14 +54,14 @@
                 try
                 {
                 itemName = item.getName();
-                File savedFile = new File("C:/Users/Emin3M/Documents/NetBeansProjects/Project Monitoring System/web/images/profiles/"+itemName);
+                File savedFile = new File(path+itemName);
                 item.write(savedFile);
                 Statement st=cn.createStatement();
                 ResultSet rs=st.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
                 while(rs.next()){
                     String delete=rs.getString(1);
                     if(!delete.equals("default.png")){
-                        File filedelete= new File("C:/Users/Emin3M/Documents/NetBeansProjects/Project Monitoring System/web/images/profiles/"+delete);
+                        File filedelete= new File(path+delete);
                         filedelete.delete();
                     }    
                 }
@@ -78,15 +79,33 @@
                 <html>
     <head>
         <meta http-equiv="refresh" content="2;url=../jsp/studentinfo.jsp" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/navcommon.css">
+        <title>Profile Pic Redirection</title>
+        <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Updating your pic...</h1>
+        <div class="col-sm-8 col-lg-offset-3">
+            <h3 style="text-decoration: none;margin-top: 25%"><b>&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user" style="font-size: 30px"></span> &nbsp;&nbsp;Please wait. We are Uploading your Profile Picture.</b></h3>
+        <div id="progressTimer" style="width: 70%"></div>
+        </div>
+        <script src="../js/plugins/jquery.min.js"></script>
+        <script src="../js/plugins/bootstrap.min.js"></script> 
+        <script src="../js/plugins/jquery.progressTimer.min.js"></script>
+        <script>
+            $("#progressTimer").progressTimer({
+                timeLimit: 1.6,
+                baseStyle: 'progress-bar-danger',
+                warningStyle: 'progress-bar-warning',
+                completeStyle: 'progress-bar-success',
+            });
+        </script>
     </body>
 </html>
 
-
-                         
-                <%}
+<%}
                 catch(Exception el)
                 {
                 out.println("Inserting error"+el.getMessage());
@@ -96,4 +115,4 @@
                 catch (Exception e){
                 out.println(e.getMessage());
                 }
-      %>
+%>

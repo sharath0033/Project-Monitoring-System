@@ -91,7 +91,7 @@
                     <%}
                         rs.close();
                         st.close();%>
-                            <li class="active"><a href="../jsp/examresult.jsp"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
+                            <li class="active"><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
                       <%
                         Statement st1=cn.createStatement();
                         ResultSet rs1=st1.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
@@ -101,7 +101,11 @@
                             <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <%Statement st3=cn.createStatement();
+                        ResultSet rs3=st3.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs3.next()){;%>
+                        <li><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs3.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                        <%}%>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>

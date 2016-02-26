@@ -192,7 +192,7 @@
         <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
                     <%Statement st=cn.createStatement();
                       ResultSet rs=st.executeQuery("SELECT * FROM projectregister WHERE Team_Leader='"+htno+"' OR Member_2='"+htno+"' OR Member_3='"+htno+"' OR Member_4='"+htno+"'");
                       if(rs.next()){%>
@@ -227,8 +227,11 @@
                             <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="propic"></li>
-                    <li class="propic"><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/dps/1.png" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                    <%Statement st3=cn.createStatement();
+                        ResultSet rs3=st3.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs3.next()){;%>
+                        <li><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs3.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                        <%}%>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -243,6 +246,7 @@
             
             <div class="top-search">
                 <div id="cse" style="width: auto;"><span style="text-align:center"><span class="glyphicon glyphicon-hourglass"></span> Loading please wait... / <span class="glyphicon glyphicon-alert"></span> Please check your Internet connection and try reloading page.</span></div>
+                <div style="text-align:center"><img src="../images/search.png" height="35%" width="35%%"></div>
             </div>
       </div>              
                     

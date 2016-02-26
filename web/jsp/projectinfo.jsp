@@ -96,11 +96,15 @@
                     <li><a href="../jsp/catalogstudent.jsp"><span class="glyphicon glyphicon-search"></span> Search</a></li>
                     <li><a href="../jsp/guideinfo.jsp"><span class="glyphicon glyphicon-briefcase"></span> Internal Guide</a></li>
                     <li><a href="../jsp/examresult.jsp"><span class="glyphicon glyphicon-list-alt"></span> Exam Result</a></li>
-                    <li  class="active"><a href="../jsp/projectinfo.jsp"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
+                    <li  class="active"><a href="#"><span class="glyphicon glyphicon-wrench"></span> Project Info</a></li>
                     <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <%Statement st3=cn.createStatement();
+                        ResultSet rs3=st3.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs3.next()){;%>
+                        <li><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs3.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                        <%}%>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -168,7 +172,7 @@
                     </tr>
                     <tr>
                         <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
-                        <td><marquee><%=rs.getString(11)%></marquee></td>
+                        <td style="color:red"><marquee><%=rs.getString(11)%></marquee></td>
                     </tr>
                     <%}
                         else if(rs.getString(3).equals(htno)){%>
@@ -177,14 +181,14 @@
                         </tr>
                         <tr>
                             <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
-                            <td><marquee><%=rs.getString(11)%></marquee></td>
+                            <td style="color:red"><marquee><%=rs.getString(11)%></marquee></td>
                         </tr>
                         <%}
                         else{%>
                         <tr><td colspan="2" style="text-align:center">Project information is not submitted yet. Please contact your team Leader.</td></tr>
                             <tr>
                             <td class="leftstuff"><b><span class="glyphicon glyphicon-copy"></span> - Remarks :</b></td>
-                            <td><marquee><%=rs.getString(11)%></marquee></td>
+                            <td style="color:red"><marquee><%=rs.getString(11)%></marquee></td>
                             </tr>
                     <%}%> 
                 </tbody>

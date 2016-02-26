@@ -91,11 +91,12 @@
         <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <%Statement st1=cn.createStatement();
+                        ResultSet rs1=st1.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs1.next()){;%>
+                        <li><a href="#" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs1.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                        <%}%>
                     <li><a href="#"><span class="glyphicon glyphicon-open-file"></span> C Paper</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
          </nav>
@@ -223,7 +224,7 @@
         <script src="../js/plugins/jquery.validate.min.js"></script>
         <script src="../js/validation/stureg.js"></script>
         <script src="../js/plugins/bootstrap.min.js"></script> 
-   
+        
 </html>
 <%}
 }else{

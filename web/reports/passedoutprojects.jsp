@@ -112,7 +112,8 @@
         <thead>
             <tr>
                 <th>Batch No</th>
-                <th>Roll No's</th>
+                <th>Year</th>
+                <th>HallTicket No's</th>
                 <th>Name's</th>
                 <th>Project Title</th>
                 <th>Internal Guide</th>
@@ -122,7 +123,7 @@
         </thead>
         <tbody>
         <%Statement st3=cn.createStatement();
-        ResultSet rs3=st3.executeQuery("SELECT * FROM projectregister ");
+        ResultSet rs3=st3.executeQuery("SELECT * FROM passout");
         while(rs3.next())
         {%>
             <tr>
@@ -133,6 +134,7 @@
                 <td><%=rs3.getString(5)%></td>
                 <td><%=rs3.getString(6)%></td>
                 <td><%=rs3.getString(7)%></td>
+                <td><%=rs3.getString(8)%></td>
             </tr>
          <%}%>   
         </tbody>

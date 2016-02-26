@@ -31,7 +31,7 @@
                 width: 100%;
             }
             .container{
-                padding:10px 10px 10px 10px;
+                padding:10px 10px 70px 10px;
                 width: 99%;
             }
             .slide {
@@ -117,7 +117,11 @@
                             <li class="active"><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <%Statement st4=cn.createStatement();
+                        ResultSet rs4=st4.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs4.next()){;%>
+                        <li><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs4.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                        <%}%>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -132,7 +136,8 @@
         <thead>
             <tr>
                 <th>Batch No</th>
-                <th>Roll No's</th>
+                <th>Year</th>
+                <th>HallTicket No's</th>
                 <th>Name's</th>
                 <th>Project Title</th>
                 <th>Internal Guide</th>
@@ -142,7 +147,7 @@
         </thead>
         <tbody>
         <%Statement st3=cn.createStatement();
-        ResultSet rs3=st3.executeQuery("SELECT * FROM projectregister ");
+        ResultSet rs3=st3.executeQuery("SELECT * FROM passout");
         while(rs3.next())
         {%>
             <tr>
@@ -153,6 +158,7 @@
                 <td><%=rs3.getString(5)%></td>
                 <td><%=rs3.getString(6)%></td>
                 <td><%=rs3.getString(7)%></td>
+                <td><%=rs3.getString(8)%></td>
             </tr>
          <%}%>   
         </tbody>

@@ -97,7 +97,11 @@
                     <li><a href="../jsp/seniorprojects.jsp"><span class="glyphicon glyphicon-list-alt"></span> Senior's Project's</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="../jsp/studentinfo.jsp"><span class="glyphicon glyphicon-user"></span> <%=htno%></a></li>
+                    <%Statement st1=cn.createStatement();
+                        ResultSet rs1=st1.executeQuery("SELECT Profile_Pic FROM register WHERE Registration_ID='"+htno+"'");
+                        if(rs1.next()){;%>
+                        <li><a href="../jsp/studentinfo.jsp" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs1.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
+                        <%}%>
                     <li><a href="../logic/logout.jsp"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
@@ -106,7 +110,7 @@
          <div class="containerfluid  slide">
             
             <div class="hed">
-                <h2><%=mem%> Profile</h2>
+                <h2 style="margin-bottom:10px"><img style="padding:0px 0px 0px 0px;" src="../images/profiles/<%=rs.getString(12)%>" class="img-circle" alt="Sharath" width="80" height="80"> <%=mem%> - Profile</h2>
             </div>
             
             <div class="bck col-sm-5 col-sm-offset-4">   
