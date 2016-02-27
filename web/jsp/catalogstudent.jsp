@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>Student Search Page</title>
+        <title>Search Project's Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -211,9 +211,9 @@
                                 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="../exampapers/c.jsp">C Paper</a></li>
-                                  <li><a href="#">Java Paper</a></li>
-                                  <li><a href="#">SQL Paper</a></li> 
-                                  <li><a href="#">HTML Paper</a></li>
+                                  <li><a href="../exampapers/java.jsp">Java Paper</a></li>
+                                  <li><a href="../exampapers/sql.jsp">SQL Paper</a></li> 
+                                  <li><a href="../exampapers/html.jsp">HTML Paper</a></li>
                                 </ul>
                             </li>
                       <%}
@@ -245,8 +245,8 @@
             </div>
             
             <div class="top-search">
-                <div id="cse" style="width: auto;"><span style="text-align:center"><span class="glyphicon glyphicon-hourglass"></span> Loading please wait... / <span class="glyphicon glyphicon-alert"></span> Please check your Internet connection and try reloading page.</span></div>
-                <div style="text-align:center"><img src="../images/search.png" height="35%" width="35%%"></div>
+                <div id="cse" style="width: auto;"><span style="text-align:center"><span class="glyphicon glyphicon-hourglass"></span> Loading please wait... / <span class="glyphicon glyphicon-alert"></span> Please check your Internet connection and try reloading page.</span>
+                <div style="text-align:center"><img src="../images/search.png" height="35%" width="35%%"></div></div>
             </div>
       </div>              
                     
@@ -256,8 +256,6 @@
         </footer>
                     
         <script src="../js/plugins/jquery.min.js"></script>
-        <script src="../js/plugins/jquery.validate.min.js"></script>
-        <script src="../js/validation/stureg.js"></script>
         <script src="../js/plugins/bootstrap.min.js"></script>  
     </body>
 </html>

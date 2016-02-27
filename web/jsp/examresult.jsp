@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>Student Profile Page</title>
+        <title>Exam Result Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -154,8 +154,6 @@
             <p>Copyright © 2016 by Avanthi Inst of Engg & Tech. All Rights Reserved.</p>		
         </footer>
         <script src="../js/plugins/jquery.min.js"></script>
-        <script src="../js/plugins/jquery.validate.min.js"></script>
-        <script src="../js/validation/stureg.js"></script>
         <script src="../js/plugins/bootstrap.min.js"></script> 
 </html>
 <%}

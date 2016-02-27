@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>Team Allocation Page</title>
+        <title>Project Team Allocation Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -275,8 +275,7 @@
 <%}
     catch(Exception e){
         out.println("Exception e"+e);  
-    }
-        
+    }      
 }else{
       response.sendRedirect("../jsp/facultyloginform.jsp");
 }%>`

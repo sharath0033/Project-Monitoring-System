@@ -106,9 +106,9 @@
                                 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="../exampapers/c.jsp">C Paper</a></li>
-                                  <li><a href="#">Java Paper</a></li>
-                                  <li><a href="#">SQL Paper</a></li> 
-                                  <li><a href="#">HTML Paper</a></li>
+                                  <li><a href="../exampapers/java.jsp">Java Paper</a></li>
+                                  <li><a href="../exampapers/sql.jsp">SQL Paper</a></li> 
+                                  <li><a href="../exampapers/html.jsp">HTML Paper</a></li>
                                 </ul>
                             </li>
                       <%}

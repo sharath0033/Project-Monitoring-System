@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>Team Allocation Page</title>
+        <title>Student Result Report Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -142,9 +142,7 @@
         </footer>
         <script src="../js/plugins/jquery.min.js"></script>
         <script src="../js/plugins/jquery.dataTables.min.js"></script>
-        <script src="../js/plugins/jquery.validate.min.js"></script>
         <script src="../js/plugins/printThis.js"></script>
-        <script src="../js/validation/stureg.js"></script>
         <script src="../js/plugins/bootstrap.min.js"></script>
         <script src="../js/plugins/dataTables.bootstrap.min.js"></script>
         <script src="../js/slidecode.js"></script>
@@ -155,8 +153,6 @@
 				$('#example').printThis();
 			});
             } );
-            
-            
         </script>
     </body>
 </html>

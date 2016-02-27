@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>Team Allocation Page</title>
+        <title>Senior's Main Project List Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -101,9 +101,9 @@
                                 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   <li><a href="../exampapers/c.jsp">C Paper</a></li>
-                                  <li><a href="#">Java Paper</a></li>
-                                  <li><a href="#">SQL Paper</a></li> 
-                                  <li><a href="#">HTML Paper</a></li>
+                                  <li><a href="../exampapers/java.jsp">Java Paper</a></li>
+                                  <li><a href="../exampapers/sql.jsp">SQL Paper</a></li> 
+                                  <li><a href="../exampapers/html.jsp">HTML Paper</a></li>
                                 </ul>
                             </li>
                       <%}
@@ -183,8 +183,7 @@
 <%}
     catch(Exception e){
         out.println("Exception e"+e);  
-    }
-        
+    }      
 }else{
       response.sendRedirect("../jsp/studentloginform.jsp");
 }%>

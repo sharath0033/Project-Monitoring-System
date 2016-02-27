@@ -24,7 +24,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/navcommon.css">
-        <title>C Exam Page</title>
+        <title>HTML Exam Page</title>
         <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
@@ -96,7 +96,7 @@
                         if(rs1.next()){;%>
                         <li><a href="#" style="padding:0px 15px 0px 0px;"><img src="../images/profiles/<%=rs1.getString(1)%>" class="img-circle" alt="Sharath" width="50" height="50"> <%=htno%></a></li>
                         <%}%>
-                    <li><a href="#"><span class="glyphicon glyphicon-open-file"></span> C Paper</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-open-file"></span> HTML Paper</a></li>
                 </ul>
             </div>
          </nav>
@@ -104,11 +104,11 @@
          <div class="containerfluid  slide">
             
             <div class="hed">
-                <h2>C - Exam Paper</h2>
+                <h2>HTML - Exam Paper</h2>
             </div>
             
             <div style="margin: 0px 30px 0px 30px">
-            <form id="cform" action="../exampapers/clogic.jsp" role="form" novalidate="novalidate">    
+            <form id="cform" action="../exampapers/htmllogic.jsp" role="form" novalidate="novalidate">    
             <table class="table table-borderless">
                 <tbody style="padding-bottom:30px">
                     <tr><th colspan="4">Q1) Which of the following is a logical operator?</th></tr>
