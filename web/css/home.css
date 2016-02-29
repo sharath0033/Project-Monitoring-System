@@ -191,3 +191,16 @@ footer {
       -webkit-transform: translateY(0%);
     }
   }
+  @media screen and (max-width: 480px) {
+        .mlogo {
+            height: 50px;
+            width: 290px;
+       }
+    }
+  @media screen and (max-width: 480px) {
+        .proimg {
+            height: 300px;
+            width: 280px;
+       }
+    }
+            

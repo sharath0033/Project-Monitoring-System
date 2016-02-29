@@ -111,73 +111,73 @@
             <form id="cform" action="../exampapers/htmllogic.jsp" role="form" novalidate="novalidate">    
             <table class="table table-borderless">
                 <tbody style="padding-bottom:30px">
-                    <tr><th colspan="4">Q1) Which of the following is a logical operator?</th></tr>
+                    <tr><th colspan="4">Q1) Which of the following input control accepts only numerical value in Web Form 2.0?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q1" value="A"> <b>A</b> - !</td><td><input type="radio" name="q1" value="B"> <b>B</b> - &&</td>
-                        <td><input type="radio" name="q1" value="C"> <b>C</b> - ||</td><td><input type="radio" name="q1" value="D"> <b>D</b> - All of the above</td>
+                        <td><input type="radio" name="q1" value="A"> <b>A</b> - week</td><td><input type="radio" name="q1" value="B"> <b>B</b> - time</td>
+                        <td><input type="radio" name="q1" value="C"> <b>C</b> - number</td><td><input type="radio" name="q1" value="D"> <b>D</b> - range</td>
                     </tr>
                 </tbody>    
                 <tbody>    
-                    <tr><th colspan="4">Q2) How to round-off a value “5.77” to 6.0?</th></tr>
+                    <tr><th colspan="4">Q2) Which of the following attribute triggers events when a form gets user input?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q2" value="A"> <b>A</b> - ceil(5.77)</td><td><input type="radio" name="q2" value="B"> <b>B</b> - round-off(5.77)</td>
-                        <td><input type="radio" name="q2" value="C"> <b>C</b> - round-up(5.77)</td><td><input type="radio" name="q2" value="D"> <b>D</b> - floor(5.77)</td>
+                        <td><input type="radio" name="q2" value="A"> <b>A</b> - onchange</td><td><input type="radio" name="q2" value="B"> <b>B</b> - onedit</td>
+                        <td><input type="radio" name="q2" value="C"> <b>C</b> - onformchange</td><td><input type="radio" name="q2" value="D"> <b>D</b> - onforminput</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q3) The type name/reserved word ‘short’ is ___</th></tr>
+                    <tr><th colspan="4">Q3) Which of the following browser supports HTML5 in its latest version?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q3" value="A"> <b>A</b> - short long</td><td><input type="radio" name="q3" value="B"> <b>B</b> - short char</td>
-                        <td><input type="radio" name="q3" value="C"> <b>C</b> - short float</td><td><input type="radio" name="q3" value="D"> <b>D</b> - short int</td>
+                        <td><input type="radio" name="q3" value="A"> <b>A</b> - Mozilla Firefox</td><td><input type="radio" name="q3" value="B"> <b>B</b> - Opera</td>
+                        <td><input type="radio" name="q3" value="C"> <b>C</b> - Both of the above.</td><td><input type="radio" name="q3" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q4) The types of linkages are,</th></tr>
+                    <tr><th colspan="4">Q4) Which of the following attribute triggers event when the window loses focus?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q4" value="A"> <b>A</b> - Internal linkage and External linkage</td><td><input type="radio" name="q4" value="B"> <b>B</b> - Internal linkage, External linkage and None linkage</td>
-                        <td><input type="radio" name="q4" value="C"> <b>C</b> - Internal linkage and None linkage</td><td><input type="radio" name="q4" value="D"> <b>D</b> - External linkage and None linkage</td>
+                        <td><input type="radio" name="q4" value="A"> <b>A</b> - onblur</td><td><input type="radio" name="q4" value="B"> <b>B</b> - onlostfocus</td>
+                        <td><input type="radio" name="q4" value="C"> <b>C</b> - onbeforeload</td><td><input type="radio" name="q4" value="D"> <b>D</b> - lostfocus</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q5) Special symbol permitted with in the identifier name.</th></tr>
+                    <tr><th colspan="4">Q5) Which of the following attribute triggers an abort event?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q5" value="A"> <b>A</b> - '$'</td><td><input type="radio" name="q5" value="B"> <b>B</b> - '@'</td>
-                        <td><input type="radio" name="q5" value="C"> <b>C</b> - '_'</td><td><input type="radio" name="q5" value="D"> <b>D</b> - '.'</td>
+                        <td><input type="radio" name="q5" value="A"> <b>A</b> - offline</td><td><input type="radio" name="q5" value="B"> <b>B</b> - onabort</td>
+                        <td><input type="radio" name="q5" value="C"> <b>C</b> - abort</td><td><input type="radio" name="q5" value="D"> <b>D</b> - onbeforeonload</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q6) Linker generates ___ file.</th></tr>
+                    <tr><th colspan="4">Q6) How can we resize the image?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q6" value="A"> <b>A</b> - Object code</td><td><input type="radio" name="q6" value="B"> <b>B</b> - Executable code</td>
-                        <td><input type="radio" name="q6" value="C"> <b>C</b> - Assembly code</td><td><input type="radio" name="q6" value="D"> <b>D</b> - None of the above.</td>
+                        <td><input type="radio" name="q6" value="A"> <b>A</b> - Using height and width attribute</td><td><input type="radio" name="q6" value="B"> <b>B</b> - Using height attribute</td>
+                        <td><input type="radio" name="q6" value="C"> <b>C</b> - Using width attribute</td><td><input type="radio" name="q6" value="D"> <b>D</b> - Using size attribute</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q7)  Which library function can convert an unsigned long to a string?</th></tr>
+                    <tr><th colspan="4">Q7) What is the difference between XML and HTML?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q7" value="A"> <b>A</b> - ltoa()</td><td><input type="radio" name="q7" value="B"> <b>B</b> - ultoa()</td>
-                        <td><input type="radio" name="q7" value="C"> <b>C</b> - system()</td><td><input type="radio" name="q7" value="D"> <b>D</b> - unsigned long can’t be converted to a string</td>
+                        <td><input type="radio" name="q7" value="A"> <b>A</b> - HTML is used for exchanging data, XML is not.</td><td><input type="radio" name="q7" value="B"> <b>B</b> - XML is used for exchanging data, HTML is not.</td>
+                        <td><input type="radio" name="q7" value="C"> <b>C</b> - HTML can have user defined tags, XML cannot</td><td><input type="radio" name="q7" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q8) In the standard library of C programming language, which of the following header file is designed for basic mathematical operations</th></tr>
+                    <tr><th colspan="4">Q8) A webpage displays a picture. What tag was used to display that picture?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q8" value="A"> <b>A</b> - math.h</td><td><input type="radio" name="q8" value="B"> <b>B</b> - conio.h</td>
-                        <td><input type="radio" name="q8" value="C"> <b>C</b> - dos.h</td><td><input type="radio" name="q8" value="D"> <b>D</b> - stdio.h</td>
+                        <td><input type="radio" name="q8" value="A"> <b>A</b> - picture</td><td><input type="radio" name="q8" value="B"> <b>B</b> - image</td>
+                        <td><input type="radio" name="q8" value="C"> <b>C</b> - img</td><td><input type="radio" name="q8" value="D"> <b>D</b> - src</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q9) What is the built in library function to adjust the allocated dynamic memory size.</th></tr>
+                    <tr><th colspan="4">Q9) Which attribute is used to name an element uniquely?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q9" value="A"> <b>A</b> - malloc</td><td><input type="radio" name="q9" value="B"> <b>B</b> - calloc</td>
-                        <td><input type="radio" name="q9" value="C"> <b>C</b> - resize</td><td><input type="radio" name="q9" value="D"> <b>D</b> - realloc</td>
+                        <td><input type="radio" name="q9" value="A"> <b>A</b> - id</td><td><input type="radio" name="q9" value="B"> <b>B</b> - dot</td>
+                        <td><input type="radio" name="q9" value="C"> <b>C</b> - class</td><td><input type="radio" name="q9" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q10) What is a pointer?</th></tr>
+                    <tr><th colspan="4">Q10) To create HTML document you require a</th></tr>
                     <tr>
-                        <td><input type="radio" name="q10" value="A"> <b>A</b> - A keyword used to create variables</td><td><input type="radio" name="q10" value="B"> <b>B</b> - A variable used to store address of an instruction</td>
-                        <td><input type="radio" name="q10"  value="C"> <b>C</b> - A variable used to store address of other variable</td><td><input type="radio" name="q10" value="D"> <b>D</b> - A variable used to store address of a structure</td>
+                        <td><input type="radio" name="q10" value="A"> <b>A</b> - web page editing software</td><td><input type="radio" name="q10" value="B"> <b>B</b> - Just a notepad can be used</td>
+                        <td><input type="radio" name="q10"  value="C"> <b>C</b> - High powered computer</td><td><input type="radio" name="q10" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
             </table>

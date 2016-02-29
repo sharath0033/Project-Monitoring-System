@@ -81,7 +81,7 @@
     <body>
 
         <div class="header">
-            <a href="../index.html"><img class="slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80"></a>
+            <a href="../index.html"><img class="mlogo slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80"></a>
         </div>
         
         <div class="container  slide">

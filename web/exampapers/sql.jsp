@@ -111,73 +111,73 @@
             <form id="cform" action="../exampapers/sqllogic.jsp" role="form" novalidate="novalidate">    
             <table class="table table-borderless">
                 <tbody style="padding-bottom:30px">
-                    <tr><th colspan="4">Q1) Which of the following is a logical operator?</th></tr>
+                    <tr><th colspan="4">Q1) Which of the following code will remove all the rows from the table LOCATIONS?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q1" value="A"> <b>A</b> - !</td><td><input type="radio" name="q1" value="B"> <b>B</b> - &&</td>
-                        <td><input type="radio" name="q1" value="C"> <b>C</b> - ||</td><td><input type="radio" name="q1" value="D"> <b>D</b> - All of the above</td>
+                        <td><input type="radio" name="q1" value="A"> <b>A</b> - DROP TABLE locations;</td><td><input type="radio" name="q1" value="B"> <b>B</b> - DELETE TABLE locations;</td>
+                        <td><input type="radio" name="q1" value="C"> <b>C</b> - TRUNCATE TABLE locations;</td><td><input type="radio" name="q1" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>    
                 <tbody>    
-                    <tr><th colspan="4">Q2) How to round-off a value “5.77” to 6.0?</th></tr>
+                    <tr><th colspan="4">Q2) A subquery can be placed in which of the SQL clauses?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q2" value="A"> <b>A</b> - ceil(5.77)</td><td><input type="radio" name="q2" value="B"> <b>B</b> - round-off(5.77)</td>
-                        <td><input type="radio" name="q2" value="C"> <b>C</b> - round-up(5.77)</td><td><input type="radio" name="q2" value="D"> <b>D</b> - floor(5.77)</td>
+                        <td><input type="radio" name="q2" value="A"> <b>A</b> - The WHERE clause</td><td><input type="radio" name="q2" value="B"> <b>B</b> - The HAVING clause)</td>
+                        <td><input type="radio" name="q2" value="C"> <b>C</b> - The FROM clause</td><td><input type="radio" name="q2" value="D"> <b>D</b> - All of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q3) The type name/reserved word ‘short’ is ___</th></tr>
+                    <tr><th colspan="4">Q3) Which of the following functions can be used on both numeric as well as non-numeric data?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q3" value="A"> <b>A</b> - short long</td><td><input type="radio" name="q3" value="B"> <b>B</b> - short char</td>
-                        <td><input type="radio" name="q3" value="C"> <b>C</b> - short float</td><td><input type="radio" name="q3" value="D"> <b>D</b> - short int</td>
+                        <td><input type="radio" name="q3" value="A"> <b>A</b> - COUNT</td><td><input type="radio" name="q3" value="B"> <b>B</b> - AVG</td>
+                        <td><input type="radio" name="q3" value="C"> <b>C</b> - STDDEV</td><td><input type="radio" name="q3" value="D"> <b>D</b> - VARIANCE</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q4) The types of linkages are,</th></tr>
+                    <tr><th colspan="4">Q4) What is returned by TRUNC(789.8389, 2)?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q4" value="A"> <b>A</b> - Internal linkage and External linkage</td><td><input type="radio" name="q4" value="B"> <b>B</b> - Internal linkage, External linkage and None linkage</td>
-                        <td><input type="radio" name="q4" value="C"> <b>C</b> - Internal linkage and None linkage</td><td><input type="radio" name="q4" value="D"> <b>D</b> - External linkage and None linkage</td>
+                        <td><input type="radio" name="q4" value="A"> <b>A</b> - 789.84</td><td><input type="radio" name="q4" value="B"> <b>B</b> - 789.83</td>
+                        <td><input type="radio" name="q4" value="C"> <b>C</b> - 78</td><td><input type="radio" name="q4" value="D"> <b>D</b> - 789.00</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q5) Special symbol permitted with in the identifier name.</th></tr>
+                    <tr><th colspan="4">Q5) Which of the following is not a group function?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q5" value="A"> <b>A</b> - '$'</td><td><input type="radio" name="q5" value="B"> <b>B</b> - '@'</td>
-                        <td><input type="radio" name="q5" value="C"> <b>C</b> - '_'</td><td><input type="radio" name="q5" value="D"> <b>D</b> - '.'</td>
+                        <td><input type="radio" name="q5" value="A"> <b>A</b> - SUM</td><td><input type="radio" name="q5" value="B"> <b>B</b> - NVL</td>
+                        <td><input type="radio" name="q5" value="C"> <b>C</b> - COUNT</td><td><input type="radio" name="q5" value="D"> <b>D</b> - MIN</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q6) Linker generates ___ file.</th></tr>
+                    <tr><th colspan="4">Q6) In which of the following cases a DML statement is not executed?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q6" value="A"> <b>A</b> - Object code</td><td><input type="radio" name="q6" value="B"> <b>B</b> - Executable code</td>
-                        <td><input type="radio" name="q6" value="C"> <b>C</b> - Assembly code</td><td><input type="radio" name="q6" value="D"> <b>D</b> - None of the above.</td>
+                        <td><input type="radio" name="q6" value="A"> <b>A</b> - When existing rows are modified</td><td><input type="radio" name="q6" value="B"> <b>B</b> - When some rows are deleted</td>
+                        <td><input type="radio" name="q6" value="C"> <b>C</b> - When a table is deleted</td><td><input type="radio" name="q6" value="D"> <b>D</b> - All of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q7)  Which library function can convert an unsigned long to a string?</th></tr>
+                    <tr><th colspan="4">Q7) What is returned by SUBSTR(‘TUTORIALS POINT’, 1, 9)?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q7" value="A"> <b>A</b> - ltoa()</td><td><input type="radio" name="q7" value="B"> <b>B</b> - ultoa()</td>
-                        <td><input type="radio" name="q7" value="C"> <b>C</b> - system()</td><td><input type="radio" name="q7" value="D"> <b>D</b> - unsigned long can’t be converted to a string</td>
+                        <td><input type="radio" name="q7" value="A"> <b>A</b> - TUTORIAL</td><td><input type="radio" name="q7" value="B"> <b>B</b> - UTORIALS</td>
+                        <td><input type="radio" name="q7" value="C"> <b>C</b> - POINT</td><td><input type="radio" name="q7" value="D"> <b>D</b> - TUTORIALS</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q8) In the standard library of C programming language, which of the following header file is designed for basic mathematical operations</th></tr>
+                    <tr><th colspan="4">Q8) Which of the following is not true about the ON clause?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q8" value="A"> <b>A</b> - math.h</td><td><input type="radio" name="q8" value="B"> <b>B</b> - conio.h</td>
-                        <td><input type="radio" name="q8" value="C"> <b>C</b> - dos.h</td><td><input type="radio" name="q8" value="D"> <b>D</b> - stdio.h</td>
+                        <td><input type="radio" name="q8" value="A"> <b>A</b> - ON clause is used to specify conditions or specify columns to join.</td><td><input type="radio" name="q8" value="B"> <b>B</b> - ON clause makes the query easy to understand.</td>
+                        <td><input type="radio" name="q8" value="C"> <b>C</b> - ON clause does not allow three way joins.</td><td><input type="radio" name="q8" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q9) What is the built in library function to adjust the allocated dynamic memory size.</th></tr>
+                    <tr><th colspan="4">Q9) What is returned by MOD(1000,30)?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q9" value="A"> <b>A</b> - malloc</td><td><input type="radio" name="q9" value="B"> <b>B</b> - calloc</td>
-                        <td><input type="radio" name="q9" value="C"> <b>C</b> - resize</td><td><input type="radio" name="q9" value="D"> <b>D</b> - realloc</td>
+                        <td><input type="radio" name="q9" value="A"> <b>A</b> - 10</td><td><input type="radio" name="q9" value="B"> <b>B</b> - 33</td>
+                        <td><input type="radio" name="q9" value="C"> <b>C</b> - 3</td><td><input type="radio" name="q9" value="D"> <b>D</b> - 30</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q10) What is a pointer?</th></tr>
+                    <tr><th colspan="4">Q10) A database administrator can</th></tr>
                     <tr>
-                        <td><input type="radio" name="q10" value="A"> <b>A</b> - A keyword used to create variables</td><td><input type="radio" name="q10" value="B"> <b>B</b> - A variable used to store address of an instruction</td>
-                        <td><input type="radio" name="q10"  value="C"> <b>C</b> - A variable used to store address of other variable</td><td><input type="radio" name="q10" value="D"> <b>D</b> - A variable used to store address of a structure</td>
+                        <td><input type="radio" name="q10" value="A"> <b>A</b> - Create users.</td><td><input type="radio" name="q10" value="B"> <b>B</b> - Create privileges.</td>
+                        <td><input type="radio" name="q10"  value="C"> <b>C</b> - Grant privileges.</td><td><input type="radio" name="q10" value="D"> <b>D</b> - All of the above.</td>
                     </tr>
                 </tbody>
             </table>

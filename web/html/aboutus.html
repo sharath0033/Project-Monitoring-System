@@ -87,12 +87,23 @@ and open the template in the editor.
             textarea {
                 resize: none;
             }
+            @media screen and (max-width: 480px) {
+                .mlogo {
+                    height: 50px;
+                    width: 300px;
+                }
+            }
+            @media screen and (max-width: 480px) {
+                .container {
+                    padding:10px;
+                }
+            }
         </style>
     </head>
     
     <body id="myPage">
         <div class="header">
-            <a href="../index.html"><img class="slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80"></a>
+            <a href="../index.html"><img class="mlogo slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80"></a>
         </div>
 
         <div class="jumbotron">

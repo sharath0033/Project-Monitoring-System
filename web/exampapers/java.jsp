@@ -111,73 +111,73 @@
             <form id="cform" action="../exampapers/javalogic.jsp" role="form" novalidate="novalidate">    
             <table class="table table-borderless">
                 <tbody style="padding-bottom:30px">
-                    <tr><th colspan="4">Q1) Which of the following is a logical operator?</th></tr>
+                    <tr><th colspan="4">Q1) What is the size of double variable?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q1" value="A"> <b>A</b> - !</td><td><input type="radio" name="q1" value="B"> <b>B</b> - &&</td>
-                        <td><input type="radio" name="q1" value="C"> <b>C</b> - ||</td><td><input type="radio" name="q1" value="D"> <b>D</b> - All of the above</td>
+                        <td><input type="radio" name="q1" value="A"> <b>A</b> - 8 bit</td><td><input type="radio" name="q1" value="B"> <b>B</b> - 16 bit</td>
+                        <td><input type="radio" name="q1" value="C"> <b>C</b> - 32 bit</td><td><input type="radio" name="q1" value="D"> <b>D</b> - 64 bit</td>
                     </tr>
                 </tbody>    
                 <tbody>    
-                    <tr><th colspan="4">Q2) How to round-off a value “5.77” to 6.0?</th></tr>
+                    <tr><th colspan="4">Q2) What is function overloading?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q2" value="A"> <b>A</b> - ceil(5.77)</td><td><input type="radio" name="q2" value="B"> <b>B</b> - round-off(5.77)</td>
-                        <td><input type="radio" name="q2" value="C"> <b>C</b> - round-up(5.77)</td><td><input type="radio" name="q2" value="D"> <b>D</b> - floor(5.77)</td>
+                        <td><input type="radio" name="q2" value="A"> <b>A</b> - Methods with same name but different parameters.</td><td><input type="radio" name="q2" value="B"> <b>B</b> - Methods with same name but different return types.</td>
+                        <td><input type="radio" name="q2" value="C"> <b>C</b> - Methods with same name, same parameter types but different parameter names</td><td><input type="radio" name="q2" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q3) The type name/reserved word ‘short’ is ___</th></tr>
+                    <tr><th colspan="4">Q3) Which method must be implemented by all threads?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q3" value="A"> <b>A</b> - short long</td><td><input type="radio" name="q3" value="B"> <b>B</b> - short char</td>
-                        <td><input type="radio" name="q3" value="C"> <b>C</b> - short float</td><td><input type="radio" name="q3" value="D"> <b>D</b> - short int</td>
+                        <td><input type="radio" name="q3" value="A"> <b>A</b> - wait()</td><td><input type="radio" name="q3" value="B"> <b>B</b> - start()</td>
+                        <td><input type="radio" name="q3" value="C"> <b>C</b> - stop()</td><td><input type="radio" name="q3" value="D"> <b>D</b> - run()</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q4) The types of linkages are,</th></tr>
+                    <tr><th colspan="4">Q4) Which of the following is not a keyword in java?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q4" value="A"> <b>A</b> - Internal linkage and External linkage</td><td><input type="radio" name="q4" value="B"> <b>B</b> - Internal linkage, External linkage and None linkage</td>
-                        <td><input type="radio" name="q4" value="C"> <b>C</b> - Internal linkage and None linkage</td><td><input type="radio" name="q4" value="D"> <b>D</b> - External linkage and None linkage</td>
+                        <td><input type="radio" name="q4" value="A"> <b>A</b> - static</td><td><input type="radio" name="q4" value="B"> <b>B</b> - Boolean</td>
+                        <td><input type="radio" name="q4" value="C"> <b>C</b> - void</td><td><input type="radio" name="q4" value="D"> <b>D</b> - private</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q5) Special symbol permitted with in the identifier name.</th></tr>
+                    <tr><th colspan="4">Q5) What is Abstraction?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q5" value="A"> <b>A</b> - '$'</td><td><input type="radio" name="q5" value="B"> <b>B</b> - '@'</td>
-                        <td><input type="radio" name="q5" value="C"> <b>C</b> - '_'</td><td><input type="radio" name="q5" value="D"> <b>D</b> - '.'</td>
+                        <td><input type="radio" name="q5" value="A"> <b>A</b> - Abstraction is a technique to define different methods of same type.</td><td><input type="radio" name="q5" value="B"> <b>B</b> - Abstraction is the ability of an object to take on many forms.</td>
+                        <td><input type="radio" name="q5" value="C"> <b>C</b> - It refers to the ability to make a class abstract in OOP.</td><td><input type="radio" name="q5" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q6) Linker generates ___ file.</th></tr>
+                    <tr><th colspan="4">Q6) This is the parent of Error and Exception classes.</th></tr>
                     <tr>
-                        <td><input type="radio" name="q6" value="A"> <b>A</b> - Object code</td><td><input type="radio" name="q6" value="B"> <b>B</b> - Executable code</td>
-                        <td><input type="radio" name="q6" value="C"> <b>C</b> - Assembly code</td><td><input type="radio" name="q6" value="D"> <b>D</b> - None of the above.</td>
+                        <td><input type="radio" name="q6" value="A"> <b>A</b> - Catchable</td><td><input type="radio" name="q6" value="B"> <b>B</b> - MainError</td>
+                        <td><input type="radio" name="q6" value="C"> <b>C</b> - Throwable</td><td><input type="radio" name="q6" value="D"> <b>D</b> - MainException</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q7)  Which library function can convert an unsigned long to a string?</th></tr>
+                    <tr><th colspan="4">Q7)  What is an Interface?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q7" value="A"> <b>A</b> - ltoa()</td><td><input type="radio" name="q7" value="B"> <b>B</b> - ultoa()</td>
-                        <td><input type="radio" name="q7" value="C"> <b>C</b> - system()</td><td><input type="radio" name="q7" value="D"> <b>D</b> - unsigned long can’t be converted to a string</td>
+                        <td><input type="radio" name="q7" value="A"> <b>A</b> - Interface is an concrete class.</td><td><input type="radio" name="q7" value="B"> <b>B</b> - Interface is an abstract class.</td>
+                        <td><input type="radio" name="q7" value="C"> <b>C</b> - An interface is a collection of abstract methods.</td><td><input type="radio" name="q7" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q8) In the standard library of C programming language, which of the following header file is designed for basic mathematical operations</th></tr>
+                    <tr><th colspan="4">Q8) In which case, a program is expected to recover?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q8" value="A"> <b>A</b> - math.h</td><td><input type="radio" name="q8" value="B"> <b>B</b> - conio.h</td>
-                        <td><input type="radio" name="q8" value="C"> <b>C</b> - dos.h</td><td><input type="radio" name="q8" value="D"> <b>D</b> - stdio.h</td>
+                        <td><input type="radio" name="q8" value="A"> <b>A</b> - If an error occurs./td><td><input type="radio" name="q8" value="B"> <b>B</b> - If an exception occurs.</td>
+                        <td><input type="radio" name="q8" value="C"> <b>C</b> - Both of the above.</td><td><input type="radio" name="q8" value="D"> <b>D</b> - None of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q9) What is the built in library function to adjust the allocated dynamic memory size.</th></tr>
+                    <tr><th colspan="4">Q9) Which is the way in which a thread can enter the waiting state?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q9" value="A"> <b>A</b> - malloc</td><td><input type="radio" name="q9" value="B"> <b>B</b> - calloc</td>
-                        <td><input type="radio" name="q9" value="C"> <b>C</b> - resize</td><td><input type="radio" name="q9" value="D"> <b>D</b> - realloc</td>
+                        <td><input type="radio" name="q9" value="A"> <b>A</b> - Invoke its sleep() method.</td><td><input type="radio" name="q9" value="B"> <b>B</b> - invoke object's wait method.</td>
+                        <td><input type="radio" name="q9" value="C"> <b>C</b> - Invoke its suspend() method.</td><td><input type="radio" name="q9" value="D"> <b>D</b> - All of the above.</td>
                     </tr>
                 </tbody>
                 <tbody>
-                    <tr><th colspan="4">Q10) What is a pointer?</th></tr>
+                    <tr><th colspan="4">Q10) What is an applet?</th></tr>
                     <tr>
-                        <td><input type="radio" name="q10" value="A"> <b>A</b> - A keyword used to create variables</td><td><input type="radio" name="q10" value="B"> <b>B</b> - A variable used to store address of an instruction</td>
-                        <td><input type="radio" name="q10"  value="C"> <b>C</b> - A variable used to store address of other variable</td><td><input type="radio" name="q10" value="D"> <b>D</b> - A variable used to store address of a structure</td>
+                        <td><input type="radio" name="q10" value="A"> <b>A</b> - Applet is a standalone java program.</td><td><input type="radio" name="q10" value="B"> <b>B</b> - Applet is a tool.</td>
+                        <td><input type="radio" name="q10"  value="C"> <b>C</b> - An applet is a Java program that runs in a Web browser.</td><td><input type="radio" name="q10" value="D"> <b>D</b> - Applet is a run time environment.</td>
                     </tr>
                 </tbody>
             </table>
