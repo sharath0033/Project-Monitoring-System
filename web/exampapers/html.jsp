@@ -85,7 +85,7 @@
     <body>
 
         <div class="header">
-            <img class="slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80">
+            <img class="mlogo slidelogo" src="../images/logo.png" alt="Logo" width="500" height="80">
         </div>
         
         <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">

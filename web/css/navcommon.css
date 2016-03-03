@@ -89,3 +89,9 @@ body {
                     -webkit-transform: translateY(0%);
                 }
             }
+            @media screen and (max-width: 480px) {
+                .mlogo {
+                    height: 50px;
+                    width: 300px;
+                }
+            }
